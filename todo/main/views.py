@@ -11,10 +11,8 @@ data = {
 }
 
 count_len_lists = len(data['lists'])
-if (6-count_len_lists) > 0:
-    need_blocks = 6 - count_len_lists
-elif (6-count_len_lists) <= 0:
-    need_blocks = 0
+need_blocks = 0 if (6-count_len_lists) <= 0 else 6 - count_len_lists
+data["need_blocks"] = need_blocks
 
 
 def main_view(request):

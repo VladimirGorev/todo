@@ -22,13 +22,9 @@ our_div = """
         """
 
 
-@register.simple_tag
-def get_div():
-    context = need_blocks*our_div
+@register.filter
+def get_div(arg):
+    context = arg*our_div
     return (mark_safe(context))
 
-@register.filter
-def create_range(value, start_index=0):
-    return range(start_index, value+start_index)
-# {% for i in 0|create_range %} this text add in our template for create cycle range
-# {% endfor %}
+
