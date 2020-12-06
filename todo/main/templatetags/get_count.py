@@ -1,7 +1,8 @@
 
 from django.utils.safestring import mark_safe
 from django import template
-from main.views import need_blocks
+from django.template.defaulttags import register
+
 
 
 register = template.Library()
@@ -24,7 +25,7 @@ our_div = """
 
 @register.filter
 def get_div(arg):
-    context = arg*our_div
-    return (mark_safe(context))
+    context = arg * our_div
+    return ( mark_safe(context))
 
 
