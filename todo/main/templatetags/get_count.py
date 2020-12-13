@@ -24,7 +24,7 @@ our_div = """
 
 
 @register.filter
-def get_div(arg):
+def get_count(arg):
     context = arg * our_div
     return ( mark_safe(context))
 
