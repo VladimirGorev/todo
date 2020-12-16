@@ -18,5 +18,6 @@ class ListModel(models.Model):
 
 class Meta:
     verbose_name = 'Список дел'
+    unique_together = ('name', 'user')
 
 
